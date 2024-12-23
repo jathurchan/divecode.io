@@ -1,5 +1,10 @@
 # API Design Patterns
 
+- [ ] Add a front matter
+- [ ] [Introduction to API Design Patterns](craftdocs://open?blockId=72F0FDA6-4BC3-4587-9EF8-0E1A19907BD8&spaceId=220382df-dd92-deed-f543-c34c29908bbc)
+
+---
+
 - Collection of safe, flexible, reusable patterns for building web APIs → more consistent and less frustrating web API experience.
 - Using **TypeScript** (~~OpenAPI~~, ~~Protocol Buffers~~),
    - API resources are defined as TypeScript interfaces.
@@ -39,6 +44,24 @@
       - Whenever you add something that might complicate an API for the benefit of an advanced user, it's best to keep this complication sufficiently hidden from a typical user only interested in the common case.
    - **Predictable** APIs that rely on repeated, predictable patterns (e.g., naming fields consistently) are easier and faster to learn and therefore better.
 2. ### Introduction to API Design Patterns
+- API design patterns are blueprints for ways of designing and structuring APIs.
+- In most cases, an API design pattern will focus on the interface exclusively, without necessarily building out the implementation.
+- API design patterns are important because APIs are generally very "rigid" and therefore not easy to change, so design patterns help minimize the need for large structural changes.
+- API design patterns will have several sections:
+   - Name and synopsis
+   - Motivation
+      - Detailed problem statement in the form of a user-focused objective.
+      - What users want to accomplish.
+      - Explore the edge cases that are likely to arise in the normal course of actual implementation.
+      - Explore how the system should react in failure scenarios.
+   - Overview**:** explaining what the design pattern recommends as a solution to the problem space.
+      - Problem definition + list of solution requirements → General outline of a solution
+      - Well-defined problem but not a single obvious solution → several different options that may each have their own trade-offs.
+   - Implementation: interface definitions defined as code, which explain what an API using this pattern to solve a problem would look like.
+      - structure + list of fields + detail discussion (behaviour of the structures and interaction between different fields...)
+      - example API definition, with comments explaining what an API that correctly implements this pattern should look like.
+   - Trade-offs: discuss what it takes away.
+      - It's very important to understand what sacrifices are necessary in order to achieve the benefits that come from relying on a design pattern (functional limitations, increased complexity, ...)
 
 ## Part 2 Design principles
 
