@@ -1,10 +1,4 @@
-# DiveCode.io
-
-Platform for consistent and collaborative learning, showcasing, and sharing of software engineering skills.
-
----
-
-## What's DiveCode.io?
+# DiveCode.io – Focus, Learn, Connect & Teach
 
 > "You do not raise to the level of your goals. You fall to the level of your systems."
 –James Clear, *Atomic Habits*
@@ -16,32 +10,32 @@ This is an ongoing project, actively developed by:
 - [**Jathurchan Selvakumar**](jathurchan.com), software engineer specializing in distributed systems, backend development, and infrastructure (Amazon, Withings, AWS)
 - [**Mathusan Selvakumar**](mathusan.me), software engineer apprentice (Google)
 
-### Key Features
+## Key Features
 
-- **🧩 Well-Structured Repository**: A single, organized GitHub repository ([ichilabs/divecode.io](https://github.com/ichilabs/divecode.io)) containing topics, notes, insights, and guides.
-- **✨ Seamless Content Management**: A CLI tool and CI/CD scripts to add content effortlessly, ensuring maintainability and scalability.
-- **🌐 Web Accessibility**: A Next.js-based [DiveCode.io](divecode.io) website with filtering capabilities and highlighted content, providing an organized, accessible and user-friendly platform.
+- **🧩 Well-Structured Repository**: A single, organized GitHub repository ([ichilabs/divecode.io](https://github.com/ichilabs/divecode.io)) containing topics, notes, insights, and guides. It supports collaboration leveraging GitHub features like issues, pull requests, code reviews, and discussions.
+- **⚙️ Seamless Content Management**: Managed using markdown front-matter, a CLI tool and CI/CD scripts, enabling structured, scalable, and frictionless updates.
+- **🌐 Web Accessibility**: A Next.js-based [DiveCode.io](divecode.io) website offers an organized and user-friendly interface with search, filtering, highlighted content, and responsive design for an engaging experience.
+- 🎬 **YouTube Channel**: Videos associated with topics, notes, insights, and guides are shared on the [DiveCode.io YouTube Channel](https://www.youtube.com/@divecodeio), providing an additional medium for learning and engagement.
 
----
+## The Method
 
-## What's the Method?
+1. #### 🎯 Focus Through Topics
 
-### 🎯 Focus Through Topics
-
-> "People think focus means saying yes to the thing you've got to focus on. But that's not what it means at all. It means saying no to the hundred other good ideas that there are."
+   > "People think focus means saying yes to the thing you've got to focus on. But that's not what it means at all. It means saying no to the hundred other good ideas that there are."
 –Steve Jobs
 
-### 📆 Learn Consistently Through Notes
+2. #### 📆 Learn Consistently Through Notes
 
-> "If you can get 1 percent better each day for one year, you'll end up thirty-seven times better by the time you're done."
+   > "If you can get 1 percent better each day for one year, you'll end up thirty-seven times better by the time you're done."
 —James Clear, *Atomic Habits*
 
-### 💡 Connect The Dots Through Insights
+3. #### 💡 Connect The Dots Through Insights
 
-> "You can't connect the dots looking forward; you can only connect them looking backwards."
+   > "You can't connect the dots looking forward; you can only connect them looking backwards."
 –Steve Jobs
 
-### 📚 Teach Through Guides
+4. #### 📚 Teach Through Guides
 
-> “The first principle is that you must not fool yourself and you are the easiest person to fool.”
+   > “The first principle is that you must not fool yourself and you are the easiest person to fool.”
 –Richard Feynman
+
