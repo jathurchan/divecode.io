@@ -4,7 +4,7 @@ Platform for consistent and collaborative learning, showcasing, and sharing of s
 
 ---
 
-> > "You do not raise to the level of your goals. You fall to the level of your systems."
+> "You do not raise to the level of your goals. You fall to the level of your systems."
 –James Clear, *Atomic Habits*
 
 **DiveCode.io** is a platform designed to consistenty and collaboratively learn, showcase, and share software engineering skills.
