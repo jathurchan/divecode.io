@@ -16,6 +16,6 @@ The platform is an ongoing project, actively developed by:
 
 ## Key Features
 
-- **📚 Well-Structured Repository**: A single, organized GitHub repository ([ichilabs/divecode.io](https://github.com/ichilabs/divecode.io)) containing topics, notes, insights, and guides.
-- **⚙️ Seamless Content Management**: A CLI tool and CI/CD scripts to add content without friction, ensuring maintainability and scalability.
+- **🧩 Well-Structured Repository**: A single, organized GitHub repository ([ichilabs/divecode.io](https://github.com/ichilabs/divecode.io)) containing topics, notes, insights, and guides.
+- **✨ Seamless Content Management**: A CLI tool and CI/CD scripts to add content without friction, ensuring maintainability and scalability.
 - **🌐 Web Accessibility**: A Next.js-based DiveCode.io website with filtering capabilities and highlighted content to provide an organized, accessible and user-friendly platform.
