@@ -12,10 +12,10 @@ This is an ongoing project, actively developed by:
 
 ## Key Features
 
-- **🧩 Well-Structured Repository**: A single, organized GitHub repository ([ichilabs/divecode.io](https://github.com/ichilabs/divecode.io)) containing topics, notes, insights, and guides. It supports collaboration leveraging GitHub features like issues, pull requests, code reviews, and discussions.
-- **⚙️ Seamless Content Management**: Managed using markdown front-matter, a CLI tool and CI/CD scripts, enabling structured, scalable, and frictionless updates.
-- **🌐 Web Accessibility**: A Next.js-based [DiveCode.io](divecode.io) website offers an organized and user-friendly interface with search, filtering, highlighted content, and responsive design for an engaging experience.
-- 🎬 **YouTube Channel**: Videos associated with topics, notes, insights, and guides are shared on the [DiveCode.io YouTube Channel](https://www.youtube.com/@divecodeio), providing an additional medium for learning and engagement.
+- **🧩 Repository**: A single, organized GitHub repository ([ichilabs/divecode.io](https://github.com/ichilabs/divecode.io)) containing topics, notes, insights, and guides. It facilitates collaboration through GitHub features like issues, pull requests, code reviews, and discussions.
+- **🌐 Website**: A Next.js-based [DiveCode.io](divecode.io) website designed for accessible and user-friendly content delivery. Features include search, filtering, highlighted content, and responsive design, offering an engaging experience.
+- **⚙️ CLI Tool**: A command-line interface tool with CI/CD to streamline content updates. This ensures a structured, scalable, and efficient workflow for managing and maintaining the repository.
+- **🎬 YouTube Channel**: The [DiveCode.io YouTube Channel](https://www.youtube.com/@divecodeio) hosts videos associated with topics, notes, insights, and guides, providing a richer experience.
 
 ## The Method
 
