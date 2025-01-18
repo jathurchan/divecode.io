@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://c2l1hawx6ubjg"]
+
+[ext_resource type="Texture2D" uid="uid://day336a6svr71" path="res://icon.svg" id="1_6srao"]
+[ext_resource type="Script" path="res://mouse.gd" id="2_jiwfh"]
+
+[node name="Main" type="Node2D"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+anchor_mode = 0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(168, 167)
+texture = ExtResource("1_6srao")
+script = ExtResource("2_jiwfh")

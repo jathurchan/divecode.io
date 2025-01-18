@@ -1,0 +1,24 @@
+[gd_scene load_steps=2 format=3 uid="uid://dv2e3xduylkls"]
+
+[ext_resource type="Script" path="res://shoot.gd" id="1_nodps"]
+
+[node name="7" type="Node2D"]
+script = ExtResource("1_nodps")
+
+[node name="6" type="Node2D" parent="."]
+script = ExtResource("1_nodps")
+
+[node name="5" type="Node2D" parent="6"]
+script = ExtResource("1_nodps")
+
+[node name="4" type="Node2D" parent="6/5"]
+script = ExtResource("1_nodps")
+
+[node name="3" type="Node2D" parent="6/5"]
+script = ExtResource("1_nodps")
+
+[node name="2" type="Node2D" parent="6"]
+script = ExtResource("1_nodps")
+
+[node name="1" type="Node2D" parent="."]
+script = ExtResource("1_nodps")
