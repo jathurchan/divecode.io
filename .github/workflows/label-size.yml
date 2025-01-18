@@ -1,0 +1,103 @@
+name: Label PR by Size
+
+on:
+  pull_request:
+    types: [opened, synchronize, labeled, unlabeled] # Trigger on PR open, update, label addition, or label removal
+
+permissions:
+  pull-requests: write
+
+jobs:
+  label_size:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Filter for size/ prefix (labeled or unlabeled event)
+        if: github.event.action == 'labeled' || github.event.action == 'unlabeled'
+        run: |
+          # Check if the label added or removed is a size label
+          if [[ "${{ github.event.label.name }}" == size/* ]]; then
+            echo "size_label=true" >> $GITHUB_ENV
+          else
+            echo "size_label=false" >> $GITHUB_ENV
+          fi
+
+      - name: Get PR diff size
+        if: env.size_label == 'true' || github.event.action == 'opened' || github.event.action == 'synchronize'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          # Calculate the total number of lines added and removed
+          DIFF=$(gh pr view ${{ github.event.pull_request.number }} --json additions,deletions --jq '.additions + .deletions')
+          echo "diff-size=$DIFF" >> $GITHUB_ENV
+
+      - name: Determine size label
+        if: env.size_label == 'true' || github.event.action == 'opened' || github.event.action == 'synchronize'
+        run: |
+          # Fetch the diff size from the environment
+          diff_size=${{ env.diff-size }}
+          echo "Diff size: $diff_size"
+
+          # Determine the label
+          if [ $diff_size -le 9 ]; then
+            echo "label=size/XS" >> $GITHUB_ENV
+          elif [ $diff_size -le 29 ]; then
+            echo "label=size/S" >> $GITHUB_ENV
+          elif [ $diff_size -le 99 ]; then
+            echo "label=size/M" >> $GITHUB_ENV
+          elif [ $diff_size -le 499 ]; then
+            echo "label=size/L" >> $GITHUB_ENV
+          elif [ $diff_size -le 999 ]; then
+            echo "label=size/XL" >> $GITHUB_ENV
+          else
+            echo "label=size/XXL" >> $GITHUB_ENV
+          fi
+
+      - name: Get existing labels on the PR
+        if: env.size_label == 'true' || github.event.action == 'opened' || github.event.action == 'synchronize'
+        id: get_labels
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          # Fetch current labels on the PR
+          gh pr view ${{ github.event.pull_request.number }} --json labels --jq '.labels[].name' > labels.txt
+          # Convert newline-separated labels into a comma-separated string
+          sanitized_labels=$(tr '\n' ',' < labels.txt | sed 's/,$//')
+          echo "existing-labels=$sanitized_labels" >> $GITHUB_ENV
+
+      - name: Check if label update or reapplication is needed
+        if: env.size_label == 'true' || github.event.action == 'opened' || github.event.action == 'synchronize'
+        id: label_check
+        run: |
+          # Check if the determined label is already present
+          if grep -q "${{ env.label }}" <<< "${{ env.existing-labels }}"; then
+            echo "skip_label_update=true" >> $GITHUB_ENV
+            echo "The determined label is already applied. No action needed."
+          else
+            echo "skip_label_update=false" >> $GITHUB_ENV
+            echo "The determined label is missing or incorrect. Proceeding to update."
+          fi
+
+      - name: Remove previous size labels
+        if: env.skip_label_update == 'false'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          # Remove size labels if they exist
+          for label in size/XS size/S size/M size/L size/XL size/XXL; do
+            if grep -q "$label" <<< "${{ env.existing-labels }}"; then
+              echo "Removing label: $label"
+              gh pr edit ${{ github.event.pull_request.number }} --remove-label "$label"
+            fi
+          done
+
+      - name: Add size label
+        if: env.skip_label_update == 'false'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          # Add the determined size label
+          gh pr edit ${{ github.event.pull_request.number }} --add-label "${{ env.label }}"
