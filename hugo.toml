@@ -1,0 +1,4 @@
+baseURL = 'https://divecode.io/'
+locale = 'en-us'
+title = 'DiveCode'
+theme = 'hextra'
