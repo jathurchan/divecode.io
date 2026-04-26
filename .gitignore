@@ -1,0 +1,8 @@
+# Hugo output build
+public/
+
+# Wrangler
+node_modules/
+package-lock.json
+package.json
+.wrangler/
